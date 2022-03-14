@@ -59,9 +59,27 @@
       <section class="solutions overlay">
         <div class="container">
           <h1 class="header-solutions">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="button primary solution" name="order_service">
+          <button
+            type="button"
+            class="button primary solution"
+            name="order_service"
+            data-modal-open
+          >
             Заказать услугу
           </button>
+
+          <!--Модальное окно-->
+
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit earum nemo natus
+                debitis aliquid. Vero unde itaque debitis eveniet illo hic officia voluptas, dolore
+                fuga? Maxime corporis voluptatum inventore quidem.
+              </p>
+              <button data-modal-close>Закрыть</button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -418,5 +436,7 @@
         </div>
       </div>
     </footer>
+    <!-- Подключен скрипт -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>
