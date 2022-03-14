@@ -254,6 +254,16 @@ ul {
   position: absolute;
   top: 0;
   right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  fill: #212121;
+  background-color: #2196f3;
+}
+
+.icon-close-modal {
+  fill: currentColor;
+  background-color: crimson;
 }
 
 /* особенности */
