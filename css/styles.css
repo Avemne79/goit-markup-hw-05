@@ -245,7 +245,6 @@ ul {
   transform: translate(-50%, -50%);
   height: 581px;
   width: 528px;
-  padding: 15px;
 
   background-color: var(--primary-color);
 }
@@ -254,16 +253,16 @@ ul {
   position: absolute;
   top: 0;
   right: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  fill: #212121;
-  background-color: #2196f3;
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+  border-color: transparent;
 }
 
 .icon-close-modal {
-  fill: currentColor;
-  background-color: crimson;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
 }
 
 /* особенности */
@@ -544,8 +543,23 @@ ul {
 /* ПОРТФОЛИО */
 
 /* наши проекты */
+/*в проджект линк сидит имэдж*/
 .project-link {
   display: block;
+}
+.thumb {
+  position: relative;
+}
+.thumb-overlay {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+}
+.thumb-text {
+  border: 1px solid red;
+  display: block;
+  padding: 64px 24px;
 }
 
 .projects-list {
