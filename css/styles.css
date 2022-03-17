@@ -558,9 +558,15 @@ ul {
   padding: 64px 24px;
   width: 370px;
   height: 294px;
+  opacity: 0;
 
   background-color: rgba(33, 150, 243, 0.9);
 }
+
+.thumb-overlay:hover {
+  opacity: 1;
+}
+
 .thumb-text {
   font-weight: 400;
   font-size: 18px;
