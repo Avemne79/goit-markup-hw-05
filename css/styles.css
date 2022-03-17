@@ -550,9 +550,18 @@ ul {
 }
 .thumb {
   position: relative;
-  display: flex;
 }
-.thumb-overlay {
+.thumb::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+/*.thumb-overlay {
   position: absolute;
   display: block;
   padding: 64px 24px;
@@ -561,21 +570,31 @@ ul {
   opacity: 0;
 
   background-color: rgba(33, 150, 243, 0.9);
-}
 
-.thumb-overlay:hover {
+  transition: 500ms opacity linear;
+}*/
+
+.thumb:hover::before {
+  opacity: 1;
+}
+.thumb-text:hover {
   opacity: 1;
 }
 
 .thumb-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 64px 24px;
+  opacity: 0;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.6;
   letter-spacing: 0.03em;
 
-  border: 1px solid red;
-
   color: var(--primary-color);
+  transition: 1000ms opacity linear;
 }
 
 .projects-list {
