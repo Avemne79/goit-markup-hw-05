@@ -125,6 +125,19 @@ ul {
   color: var(--accent-color);
 }
 
+.item {
+  position: relative;
+}
+
+.active {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
 /* как связаться */
 
 .contacts-list {
@@ -560,19 +573,6 @@ ul {
   opacity: 0;
   background-color: rgba(33, 150, 243, 0.9);
 }
-
-/*.thumb-overlay {
-  position: absolute;
-  display: block;
-  padding: 64px 24px;
-  width: 370px;
-  height: 294px;
-  opacity: 0;
-
-  background-color: rgba(33, 150, 243, 0.9);
-
-  transition: 500ms opacity linear;
-}*/
 
 .thumb:hover::before {
   opacity: 1;
