@@ -6,6 +6,7 @@
 /* цвет акцента #2196f3; */
 /* цвет линии в хедере #ECECEC */
 /* цвет рамки в постоянных клиентах #afb1b8; */
+/*цвет оверлэй в портфолио rgba(33, 150, 243, 0.9);*/
 :root {
   --primary-color: #ffffff;
   --footer-bg-color: #2f303a;
@@ -549,17 +550,26 @@ ul {
 }
 .thumb {
   position: relative;
+  display: flex;
 }
 .thumb-overlay {
   position: absolute;
-
-  left: 0;
-  top: 0;
-}
-.thumb-text {
-  border: 1px solid red;
   display: block;
   padding: 64px 24px;
+  width: 370px;
+  height: 294px;
+
+  background-color: rgba(33, 150, 243, 0.9);
+}
+.thumb-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+
+  border: 1px solid red;
+
+  color: var(--primary-color);
 }
 
 .projects-list {
