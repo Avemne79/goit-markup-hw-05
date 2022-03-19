@@ -111,31 +111,35 @@ ul {
   letter-spacing: 0.02em;
 
   color: var(--primary-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link.current {
+  position: relative;
   color: var(--accent-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link.current:hover,
 .link.current:focus {
   color: var(--primary-text-color);
 }
-.link:hover,
-.link:focus {
-  color: var(--accent-color);
-}
 
-.item {
-  position: relative;
-}
-
-.active {
+.link.current::after {
   position: absolute;
+  content: '';
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-color);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
 }
 
 /* как связаться */
@@ -177,6 +181,8 @@ ul {
   letter-spacing: 0.02em;
 
   color: var(--secondary-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .email-contact:hover,
 .email-contact:focus {
@@ -234,6 +240,9 @@ ul {
   padding: 10px 32px;
   border: 0;
   border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*модальное окно*/
@@ -246,10 +255,13 @@ ul {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -265,18 +277,31 @@ ul {
 
 .close-button {
   position: absolute;
-  top: 0;
+  border: 0;
+  padding: 0;
   right: 0;
+
   background-color: var(--primary-color);
-  color: var(--primary-color);
-  border-color: transparent;
 }
 
 .icon-close-modal {
-  top: 0;
-  right: 0;
+  margin: 8px 8px 0 0;
   width: 30px;
   height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  fill: var(--primary-color);
+
+  transform: rotate(0deg);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-close-modal:hover {
+  fill: var(--accent-color);
+  transform: rotate(45deg);
 }
 
 /* особенности */
@@ -358,6 +383,35 @@ ul {
   text-align: center;
 }
 
+.label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.label::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.label-text {
+  position: absolute;
+  bottom: 27px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--primary-color);
+}
+
 /* наша команда */
 .team {
   background-color: var(--buttons-bg-color);
@@ -427,6 +481,9 @@ ul {
   height: 44px;
   border-radius: 50%;
   color: #afb1b8;
+
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-team:hover,
@@ -483,6 +540,9 @@ ul {
   height: 100%;
   color: #afb1b8;
   background-color: var(--primary-color);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client:hover,
@@ -517,6 +577,9 @@ ul {
 
   border: 0;
   border-radius: 4px;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-item:not(:last-child) {
@@ -557,9 +620,12 @@ ul {
 /* ПОРТФОЛИО */
 
 /* наши проекты */
-/*в проджект линк сидит имэдж*/
+
 .project-link {
   display: block;
+  overflow: hidden;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .thumb {
   position: relative;
@@ -571,22 +637,29 @@ ul {
   width: 100%;
   height: 100%;
   opacity: 0;
+  transform: translateY(100%);
+
   background-color: rgba(33, 150, 243, 0.9);
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.thumb:hover::before {
+.project-link:hover .thumb::before,
+.project-link:focus .thumb::before {
   opacity: 1;
-}
-.thumb-text:hover {
-  opacity: 1;
+  transform: translateY(0);
 }
 
 .thumb-text {
   position: absolute;
+  display: inline-block;
   top: 0;
   left: 0;
   padding: 64px 24px;
   opacity: 0;
+  overflow: hidden;
+  transform: translateY(100%);
 
   font-weight: 400;
   font-size: 18px;
@@ -594,7 +667,15 @@ ul {
   letter-spacing: 0.03em;
 
   color: var(--primary-color);
-  transition: 1000ms opacity linear;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-link:hover .thumb-text,
+.project-link:focus .thumb-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-list {
@@ -606,6 +687,7 @@ ul {
 }
 
 /* тень при ховере и фокусе */
+
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -698,6 +780,8 @@ ul {
   text-align: left;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* блок соц-сети */
@@ -733,6 +817,8 @@ ul {
   height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
