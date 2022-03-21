@@ -301,7 +301,7 @@ ul {
 
 .icon-close-modal:hover {
   fill: var(--accent-color);
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 /* особенности */
